@@ -55,7 +55,7 @@ public class AvgWithholding {
 			taxWithholding = income * 0.30;
 		}
 		
-		System.out.println("Tax witholding per week is " + taxWithholding + ". ");
+		System.out.println("Tax witholding per week is $" + taxWithholding + ". ");
 	}
 
 }
