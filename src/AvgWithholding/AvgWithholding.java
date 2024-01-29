@@ -40,7 +40,7 @@ public class AvgWithholding {
 		double taxWithholding;
 		System.out.println("Enter customer's gross weekly income in dollars: $");
 		
-		income = scnr.nextInt();
+		income = scnr.nextDouble();
 		
 		if (income < 500) {
 			taxWithholding = income * 0.10;
@@ -55,7 +55,7 @@ public class AvgWithholding {
 			taxWithholding = income * 0.30;
 		}
 		
-		System.out.println("Tax witholding per week is $" + taxWithholding + ". ");
+		System.out.printf("Tax witholding per week is $%.2f.\n",taxWithholding);
 	}
 
 }
