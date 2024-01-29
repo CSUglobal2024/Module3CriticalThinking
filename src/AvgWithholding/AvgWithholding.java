@@ -79,7 +79,7 @@ public class AvgWithholding {
 		
 		taxWithholding = income * taxRate;
 		
-		System.out.printf("Tax witholding per week is $%.2f.\n",taxWithholding);
+		System.out.printf("Tax withholding per week is $%.2f.\n", taxWithholding);
 	}
 
 }
