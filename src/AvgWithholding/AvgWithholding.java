@@ -20,7 +20,8 @@ public class AvgWithholding {
 		 * Should I use fixed variables for the tax rates, or just multiply by the respective decimals?
 		 * 
 		 * Before coding - use git init and make first add and commit, connect to a new repository on my github
-		 * Then push. Continue to commit changes regularly with informative commit notes.
+		 * Then push. Continue to commit changes regularly with informative commit notes. Decide whether switch statements 
+		 * or if else is better. 
 		 * 
 		 * Step 1. import scanner
 		 * Step 2. initialize variable for income input
@@ -33,27 +34,50 @@ public class AvgWithholding {
 		 *  	values to the cent somewhere in the mid $80k range. Most people do not make 80k a week, but
 		 *  	some do.
 		 * 
-		 * - 
+		 * ------EXAMPLE OF SWITCH STMNTS INSTEAD ON IF/ELSE: But cannot use because the ranges are difficult to 
+		 * get correct - This cannot calculate between $499 and $500.
+		 * // Determine tax rate based on income range using switch statement
+        double taxRate;
+        switch ((int) income) {
+            case 0 ... 499:
+                taxRate = 0.10;
+                break;
+            case 500 ... 1499:
+                taxRate = 0.15;
+                break;
+            case 1500 ... 2499:
+                taxRate = 0.20;
+                break;
+            default:
+                taxRate = 0.30;
+        }
+
+        // Calculate tax withholding
+        double taxWithholding = income * taxRate;
 		 */
 		Scanner scnr = new Scanner(System.in);
 		double income;
 		double taxWithholding;
+		double taxRate;
+		
 		System.out.println("Enter customer's gross weekly income in dollars: $");
 		
 		income = scnr.nextDouble();
 		
 		if (income < 500) {
-			taxWithholding = income * 0.10;
+			taxRate = 0.10;
 		} 
 		else if (income < 1500) {
-			taxWithholding = income * 0.15;
+			taxRate = 0.15;
 		}
 		else if (income < 2500) {
-			taxWithholding = income * 0.20;
+			taxRate = 0.20;
 		}
 		else {
-			taxWithholding = income * 0.30;
+			taxRate = 0.30;
 		}
+		
+		taxWithholding = income * taxRate;
 		
 		System.out.printf("Tax witholding per week is $%.2f.\n",taxWithholding);
 	}
