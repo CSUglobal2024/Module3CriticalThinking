@@ -63,6 +63,15 @@ public class AvgWithholding {
 		System.out.println("Enter customer's gross weekly income in dollars: $");
 		
 		income = scnr.nextDouble();
+		// Handle input validation for negative numbers
+        while (true) {
+            income = scnr.nextDouble();
+            if (income >= 0) {
+                break;
+            } else {
+                System.out.println("Invalid input. Please enter a number greater than or equal to zero.");
+            }
+        }
 		
 		if (income < 500) {
 			taxRate = 0.10;
